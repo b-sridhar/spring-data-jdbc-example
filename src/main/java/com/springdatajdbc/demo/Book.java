@@ -1,21 +1,20 @@
 package com.springdatajdbc.demo;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
 import org.springframework.util.Assert;
 
 import java.util.HashSet;
 import java.util.Set;
 
-@Table(value = "demo.book")
 public class Book {
 
-    private @Id Long id;
+    private @Id
+    Long id;
     public String title;
 
     private Set<AuthorRef> authors = new HashSet<>();
 
-    public Book(){
+    public Book() {
 
     }
 
@@ -23,7 +22,7 @@ public class Book {
         this.title = title;
     }
 
-    void addAuthor(Author author) {
+    public void addAuthor(Author author) {
         authors.add(createAuthorRef(author));
     }
 
