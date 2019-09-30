@@ -5,8 +5,8 @@ import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration;
 import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;
-import org.springframework.data.jdbc.repository.config.JdbcConfiguration;
 import org.springframework.data.relational.core.mapping.NamingStrategy;
 import org.springframework.data.relational.core.mapping.RelationalPersistentProperty;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
@@ -21,7 +21,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableJdbcRepositories(basePackages = "com.springdatajdbc.demo")
-public class AppConfig extends JdbcConfiguration {
+public class AppConfig extends AbstractJdbcConfiguration {
 
     /*@Bean
     DataSource dataSource() {

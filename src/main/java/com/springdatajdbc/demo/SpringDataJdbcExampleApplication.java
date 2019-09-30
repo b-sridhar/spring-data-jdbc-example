@@ -33,4 +33,5 @@ public class SpringDataJdbcExampleApplication implements CommandLineRunner {
 
         books.deleteAll();
     }
+
 }
